@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".second_task.TaskSecondActivity">
+
+    <TextView
+        android:id="@+id/balanceHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/balance"
+        android:textColor="@color/lightBlue"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/topDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#626262"
+        app:layout_constraintTop_toBottomOf="@id/balanceHeader" />
+
+    <TextView
+        android:id="@+id/addBalanceTitle"
+        style="@style/EditTextTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topDivider" />
+
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/amount"
+        android:inputType="numberDecimal"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="@id/addBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@id/addBalanceTitle" />
+
+    <TextView
+        android:id="@+id/fullNameTitle"
+        style="@style/EditTextTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/full_name_on_card"
+        app:layout_constraintStart_toStartOf="@id/addBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@id/amountEditText" />
+
+    <EditText
+        android:id="@+id/fullNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/example_john_jason_doe"
+        android:inputType="text"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="@id/fullNameTitle"
+        app:layout_constraintTop_toBottomOf="@id/fullNameTitle" />
+
+    <TextView
+        android:id="@+id/creditCardTitle"
+        style="@style/EditTextTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/credit_card_number"
+        app:layout_constraintStart_toStartOf="@id/addBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@id/fullNameEditText" />
+
+    <EditText
+        android:id="@+id/creditCardEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/credit_card_example"
+        android:inputType="text"
+        android:digits="012345679 "
+        android:maxLength="19"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="@id/creditCardTitle"
+        app:layout_constraintTop_toBottomOf="@id/creditCardTitle" />
+
+    <TextView
+        android:id="@+id/expirationTitle"
+        style="@style/EditTextTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/expiration_date"
+        app:layout_constraintStart_toStartOf="@id/addBalanceTitle"
+        app:layout_constraintTop_toBottomOf="@id/creditCardEditText" />
+
+    <EditText
+        android:id="@+id/expirationMonthEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/expiration_month"
+        android:inputType="number"
+        android:maxLength="2"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="@id/expirationTitle"
+        app:layout_constraintTop_toBottomOf="@id/expirationTitle" />
+
+    <EditText
+        android:id="@+id/expirationYearEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:hint="@string/expiration_year"
+        android:inputType="number"
+        android:maxLength="2"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toEndOf="@id/expirationMonthEditText"
+        app:layout_constraintTop_toBottomOf="@id/expirationTitle" />
+
+    <TextView
+        android:id="@+id/cvvTitle"
+        style="@style/EditTextTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/cvv_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/creditCardEditText" />
+
+    <EditText
+        android:id="@+id/cvvEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/cvv_example"
+        android:inputType="number"
+        android:maxLength="3"
+        android:paddingEnd="30dp"
+        app:layout_constraintStart_toStartOf="@id/cvvTitle"
+        app:layout_constraintTop_toBottomOf="@id/cvvTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buyNowButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/lightBlue"
+        android:text="@string/buy_now"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
